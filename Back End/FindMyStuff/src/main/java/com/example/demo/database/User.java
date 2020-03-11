@@ -1,12 +1,14 @@
 package com.example.demo.database;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.SerializableString;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
 public class User {
@@ -23,6 +25,11 @@ public class User {
     public void setPassword(String password){this.password = password;}
     public boolean verifyPassword(String password){return this.password.equals(password);}
 
+    public User(String username, String password)
+    {
+        this.username = username;
+        this.password = password;
+    }
     public String toJSON()
     {
         ObjectMapper obj = new ObjectMapper();
@@ -33,4 +40,6 @@ public class User {
         }
         return null;
     }
+
+
 }

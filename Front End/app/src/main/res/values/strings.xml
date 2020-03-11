@@ -1,3 +1,6 @@
-<resources>
+    <resources>
     <string name="app_name">FindMyStuffClient</string>
+    <string name="Username_Tag">Username</string>
+    <string name="Password_Tag">Password</string>
+    <string name="database_url">localhost:8080</string>
 </resources>

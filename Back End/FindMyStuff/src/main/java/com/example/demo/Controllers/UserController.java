@@ -1,5 +1,6 @@
 package com.example.demo.Controllers;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +16,9 @@ public class UserController {
 
 
     @PostMapping("/user/login")
-    public @ResponseBody String userLogin(@RequestBody String username, @RequestBody String password){
+    public @ResponseBody
+    JSONObject userLogin(@RequestBody JSONObject request) //Takes a JSONObject with fields "username" and "password", checks if
+    {
         //TODO
         return null;
     }
